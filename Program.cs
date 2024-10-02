@@ -11,7 +11,7 @@ internal class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Enkel kalkylator");
-        Console.WriteLine("Välj en operator (+, -, /, *)");
+        Console.WriteLine("Välj en operator (+, -, /, *, %)");
         char operation = Console.ReadKey().KeyChar;
         Console.WriteLine("Ange första talet: ");
         double num1 = Convert.ToDouble(Console.ReadLine());
@@ -32,7 +32,10 @@ internal class Program
                 result = num1 * num2;
                 break;
             case '/':
-                result = num2 * num1;
+                result = num2 / num1;
+                break;
+            case '%':
+                result = num1 % num2;   
                 break;
 
             default:
