@@ -19,6 +19,7 @@ internal class Program
         double num2 = Convert.ToDouble(Console.ReadLine());
 
 
+
         double result = 0;
         switch (operation)
         {
@@ -32,18 +33,26 @@ internal class Program
                 result = num1 * num2;
                 break;
             case '/':
-                result = num2 / num1;
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Fel: Division med noll är inte tillåten.");
+                    return;
+                }
+                result = num1 / num2;
                 break;
             case '%':
-                result = num1 % num2;   
+                result = num1 % num2;
                 break;
 
             default:
                 Console.WriteLine("Ogiltig operation");
                 return;
+
         }
 
         Console.WriteLine($"Resultat: {result}");
         Console.ReadKey();
     }
+}
+
 }
